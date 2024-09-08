@@ -9,55 +9,40 @@
 <body>
     <header>
         <nav>
-            <ul>
+            <ul class="nav-bar">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="eigen_vectors_and_values.html" class="nav-link">Eigen Vectors and Values</a></li>
                 <li><a href="fem_topics.html" class="nav-link">FEM Topics</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
-        <h1>Welcome to My Colorful Website</h1>
-        <p>This is the main page of your website. Below are links to various topics:</p>
-        <div class="buttons">
-            <a href="eigen_vectors_and_values.html" class="btn">Explore Eigen Vectors and Values</a>
-            <a href="fem_topics.html" class="btn">Discover FEM Topics</a>
+        <div class="banner">
+            <h1>Welcome to the FEM Learning Hub</h1>
+            <p>Explore key topics on Finite Element Method and more!</p>
         </div>
-    </main>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to My Website</h1>
-    <p>This is the main page of your website. Below is a link to another page:</p>
-    <ul>
-        <li><a href="eigen_vectors_and_values.html">Go to Eigen Vectors and Values</a></li>
-    </ul>
-</body>
-</html>
+    </header>
 
+    <main>
+        <section class="intro">
+            <h2>Explore FEM Concepts</h2>
+            <p>We provide an in-depth look at various topics in Finite Element Method (FEM) with clear explanations, images, and examples.</p>
+        </section>
+
+        <section class="topics-section">
+            <h2>FEM Topics</h2>
+            <div class="topic-buttons">
+                <a href="fem_intro.html" class="btn">Introduction to FEM</a>
+                <a href="shape_functions.html" class="btn">Shape Functions</a>
+                <a href="stiffness_matrix.html" class="btn">Stiffness Matrix</a>
+                <a href="boundary_conditions.html" class="btn">Boundary Conditions</a>
+                <a href="numerical_integration.html" class="btn">Numerical Integration</a>
+                <a href="mesh_generation.html" class="btn">Mesh Generation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FEM Learning Hub</p>
+    </footer>
+</body>
+</html>
