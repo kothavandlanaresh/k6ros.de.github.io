@@ -48,3 +48,24 @@ button:hover {
     padding: 15px;
     border-radius: 5px;
 }
+/* Logo Styles */
+#logo {
+    text-align: center;
+}
+
+#logo h1 {
+    margin: 0;
+    font-size: 2em; /* Adjust size as needed */
+    font-weight: 400; /* Use a lighter weight for a minimal look */
+    letter-spacing: 0.1em; /* Slight spacing for elegance */
+}
+
+#logo a.logo-text {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark gray color for a classic look */
+    font-family: 'Serif', serif; /* Serif font for sophistication */
+}
+
+#logo a.logo-text:hover {
+    color: #000; /* Change color on hover if desired */
+}
