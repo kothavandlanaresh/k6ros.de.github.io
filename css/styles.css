@@ -138,3 +138,16 @@ footer {
     text-align: center;
     padding: 1rem 0;
 }
+/* Sidebar toggle button */
+.toggle-sidebar {
+    background-color: #0366d6; /* Sidebar toggle button color */
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    position: fixed;
+    top: 60px; /* Adjusted top position */
+    left: 20px;
+    z-index: 1001;
+}
