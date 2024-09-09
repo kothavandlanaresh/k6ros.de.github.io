@@ -18,6 +18,7 @@
             align-items: center;
             background-color: #333;
             padding: 10px;
+            justify-content: space-between;
         }
 
         /* Collapsible button styling */
@@ -27,14 +28,30 @@
             color: white;
             padding: 10px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
+        }
+
+        /* Hide menu by default */
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #444;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .nav-menu a {
+            color: white;
+            padding: 10px 0;
+            text-decoration: none;
+            text-align: center;
+            border-bottom: 1px solid #555;
         }
 
         /* Logo styling */
         .logo-container {
             display: flex;
             align-items: center;
-            margin-left: 10px;
         }
 
         .logo-container img {
@@ -50,13 +67,21 @@
             font-weight: bold;
         }
 
-        /* Media Query for small screens */
+        /* Mobile View */
         @media (max-width: 600px) {
             .logo-text {
                 font-size: 18px;
             }
             .logo-container img {
                 height: 30px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-menu {
+                display: flex;
             }
         }
     </style>
@@ -72,10 +97,23 @@
         </div>
     </div>
 
+    <!-- Collapsible navigation (for mobile use) -->
+    <div id="navMenu" class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
     <script>
+        // Toggle the collapsible menu on mobile
         function toggleMenu() {
-            // Functionality for collapsible button (can be customized)
-            alert("Menu toggled!");
+            const navMenu = document.getElementById("navMenu");
+            if (navMenu.style.display === "flex") {
+                navMenu.style.display = "none";
+            } else {
+                navMenu.style.display = "flex";
+            }
         }
     </script>
 
