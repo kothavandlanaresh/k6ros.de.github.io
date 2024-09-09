@@ -85,6 +85,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
+            transform: translateX(0);
         }
         nav a {
             color: white;
@@ -120,7 +121,7 @@
 
         /* When sidebar is hidden */
         .content-full {
-            margin-left: 0;
+            margin-left: 0; /* Full width when sidebar is hidden */
         }
 
         /* Responsive adjustments */
@@ -199,9 +200,9 @@
             // Adjust header width based on sidebar visibility
             var header = document.querySelector('header');
             if (sidebar.classList.contains('sidebar-hidden')) {
-                header.style.width = '100%';
+                header.style.width = '100%'; // Full width when sidebar is hidden
             } else {
-                header.style.width = 'calc(100% - 250px)';
+                header.style.width = 'calc(100% - 250px)'; // Reduced width when sidebar is visible
             }
         }
     </script>
