@@ -3,42 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stiffness Matrix in FEM</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Stiffness Matrix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        .formula {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="nav-bar">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="eigen_vectors_and_values.html" class="nav-link">Eigen Vectors and Values</a></li>
-                <li><a href="fem_topics.html" class="nav-link">FEM Topics</a></li>
-            </ul>
-        </nav>
-        <div class="banner">
-            <h1>Stiffness Matrix in Finite Element Method</h1>
-            <p>Learn about the key role of the stiffness matrix in FEM.</p>
-        </div>
-    </header>
+    <h1>Stiffness Matrix</h1>
 
-    <main>
-        <section class="content">
-            <h2>What is the Stiffness Matrix?</h2>
-            <p>The stiffness matrix is a mathematical representation of how a structure responds to forces. It is derived using the element's material properties and geometry.</p>
+    <h2>Introduction</h2>
+    <p>The stiffness matrix is a fundamental concept in FEM. It represents the relationship between nodal displacements and forces in a finite element system.</p>
 
-            <h3>Formulation of the Stiffness Matrix</h3>
-            <p>The matrix is constructed by assembling the local element stiffness matrices into a global matrix that represents the entire system.</p>
+    <h2>Derivation of the Stiffness Matrix</h2>
+    <p>For a 1D bar element, the stiffness matrix can be derived using the principle of virtual work. The general form of the stiffness matrix for an element is:</p>
+    <div class="formula">
+        <pre>
+        K = E * A / L * [1 -1
+                         -1  1]
+        </pre>
+    </div>
+    <p>Where E is the Young's modulus, A is the cross-sectional area, and L is the length of the element.</p>
 
-            <img src="stiffness_matrix_example.png" alt="Stiffness Matrix Example" style="width: 100%; border: 2px solid #333;">
+    <h2>Example: 2D Triangular Element</h2>
+    <p>For a 2D triangular element, the stiffness matrix is more complex and involves the area of the triangle and the derivatives of the shape functions. It is generally represented as:</p>
+    <div class="formula">
+        <pre>
+        K = (t / 4A) * [a1^2 + a2^2  a1*a2
+                        a1*a2  a2^2 + a3^2]
+        </pre>
+    </div>
+    <p>Where t is the thickness, A is the area of the triangle, and a1, a2, a3 are the lengths of the sides.</p>
 
-            <h3>Applications in Structural Analysis</h3>
-            <p>The stiffness matrix is used to solve structural problems, particularly for finding displacements, strains, and stresses in a structure.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 FEM Learning Hub</p>
-    </footer>
+    <h2>Summary</h2>
+    <p>The stiffness matrix is critical for solving FEM problems as it determines how forces are distributed across the elements and is used to assemble the global stiffness matrix.</p>
 </body>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Matrices in FEM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        .formula {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Element Matrices in FEM</h1>
+
+    <h2>Introduction</h2>
+    <p>Element matrices are used to represent the behavior of individual elements in a finite element model. They include the stiffness matrix, mass matrix, and damping matrix.</p>
+
+    <h2>Stiffness Matrix</h2>
+    <p>The stiffness matrix describes the relationship between forces and displacements. For a 1D element, it is:</p>
+    <div class="formula">
+        <pre>
+        K = (E * A / L) * [1 -1
+                           -1  1]
+        </pre>
+    </div>
+
+    <h2>Mass Matrix</h2>
+    <p>The mass matrix represents the distribution of mass in the finite element model. For a 1D element, it is often assumed to be:</p>
+    <div class="formula">
+        <pre>
+        M = (ρ * A * L / 6) * [2 1
+                              1 2]
+        </pre>
+    </div>
+    <p>Where ρ is the density of the material.</p>
+
+    <h2>Damping Matrix</h2>
+    <p>The damping matrix accounts for energy dissipation in the system. A common form for a 1D element is:</p>
+    <div class="formula">
+        <pre>
+        C = α * K + β * M
+        </pre>
+    </div>
+    <p>Where α and β are damping coefficients.</p>
+
+    <h2>Summary</h2>
+    <p>Element matrices are fundamental components in FEM that capture the properties and behavior of individual elements, which are then assembled into the global system.</p>
+</body>
+</html>

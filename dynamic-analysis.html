@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Analysis in FEM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        .formula {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Analysis in FEM</h1>
+
+    <h2>Introduction</h2>
+    <p>Dynamic analysis in FEM is used to study how structures respond to time-dependent forces, such as vibrations, impacts, and seismic activities.</p>
+
+    <h2>Types of Dynamic Analysis</h2>
+    <ol>
+        <li><strong>Modal Analysis:</strong> Determines the natural frequencies and mode shapes of a structure.</li>
+        <li><strong>Harmonic Analysis:</strong> Studies the response of a structure to sinusoidal time-dependent loads.</li>
+        <li><strong>Transient Analysis:</strong> Analyzes the response of a structure to time-varying loads over a period.</li>
+        <li><strong>Random Vibration Analysis:</strong> Used for systems subjected to random, stochastic forces.</li>
+    </ol>
+
+    <h2>Example: Modal Analysis</h2>
+    <p>The eigenvalue problem for a vibrating system is represented as:</p>
+    <div class="formula">
+        <pre>
+        (K - λM) * Φ = 0
+        </pre>
+    </div>
+    <p>Where K is the stiffness matrix, M is the mass matrix, λ is the eigenvalue (related to the square of the natural frequency), and Φ is the mode shape vector.</p>
+
+    <h2>Solution Techniques</h2>
+    <ol>
+        <li><strong>Direct Integration:</strong> Numerical methods like Newmark’s method or the central difference method to integrate the equations of motion.</li>
+        <li><strong>Frequency Domain Analysis:</strong> Used in harmonic analysis to solve for the steady-state response using frequency response functions.</li>
+    </ol>
+
+    <h2>Summary</h2>
+    <p>Dynamic analysis provides insights into how structures behave under various dynamic conditions, crucial for designing structures to withstand real-world forces and vibrations.</p>
+</body>
+</html>

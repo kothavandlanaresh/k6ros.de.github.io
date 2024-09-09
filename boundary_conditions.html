@@ -4,45 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boundary Conditions in FEM</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        .formula {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="nav-bar">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="eigen_vectors_and_values.html" class="nav-link">Eigen Vectors and Values</a></li>
-                <li><a href="fem_topics.html" class="nav-link">FEM Topics</a></li>
-            </ul>
-        </nav>
-        <div class="banner">
-            <h1>Boundary Conditions in Finite Element Method</h1>
-            <p>Learn the importance of boundary conditions in FEM.</p>
+    <h1>Boundary Conditions in FEM</h1>
+
+    <h2>Introduction</h2>
+    <p>Boundary conditions are essential for solving FEM problems as they define how the model interacts with its environment. They are applied to the edges or boundaries of the problem domain.</p>
+
+    <h2>Types of Boundary Conditions</h2>
+    <ol>
+        <li><strong>Dirichlet Boundary Conditions:</strong> These specify the value of the variable at the boundary. For example, specifying a fixed temperature or displacement.</li>
+        <div class="formula">
+            <pre>
+            u(x) = u0
+            </pre>
         </div>
-    </header>
+        <li><strong>Neumann Boundary Conditions:</strong> These specify the derivative of the variable at the boundary, often representing fluxes or forces.</li>
+        <div class="formula">
+            <pre>
+            σ * n = t
+            </pre>
+        </div>
+        <li><strong>Robin Boundary Conditions:</strong> A combination of Dirichlet and Neumann conditions, specifying both the value and the gradient of the variable.</li>
+        <div class="formula">
+            <pre>
+            α * u + β * ∂u/∂n = g
+            </pre>
+        </div>
+    </ol>
 
-    <main>
-        <section class="content">
-            <h2>What are Boundary Conditions?</h2>
-            <p>Boundary conditions are constraints imposed on a system in FEM to simulate how the structure interacts with its surroundings.</p>
+    <h2>Example: Fixed Support</h2>
+    <p>For a fixed support in a structural analysis problem, the boundary condition would be:</p>
+    <div class="formula">
+        <pre>
+        u = 0
+        v = 0
+        </pre>
+    </div>
+    <p>Where u and v are the displacements in the x and y directions, respectively.</p>
 
-            <h3>Types of Boundary Conditions</h3>
-            <ul>
-                <li>Dirichlet Boundary Conditions (displacement boundary conditions)</li>
-                <li>Neumann Boundary Conditions (force boundary conditions)</li>
-                <li>Mixed Boundary Conditions</li>
-            </ul>
-
-            <img src="boundary_conditions_example.png" alt="Boundary Conditions Example" style="width: 100%; border: 2px solid #333;">
-
-            <h3>How to Apply Boundary Conditions in FEM?</h3>
-            <p>In FEM, boundary conditions are applied at nodes, and the system's degrees of freedom are adjusted based on these conditions to simulate realistic scenarios.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 FEM Learning Hub</p>
-    </footer>
+    <h2>Summary</h2>
+    <p>Applying the correct boundary conditions is crucial for obtaining accurate results in FEM analysis, as they represent the constraints and interactions of the model with its environment.</p>
 </body>
 </html>
