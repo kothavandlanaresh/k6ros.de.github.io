@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stiffness Matrix</title>
+    <title>The Stiffness Matrix: Fundamentals and Examples</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,42 +20,73 @@
             border: 1px solid #ddd;
             overflow-x: auto;
         }
-        .formula {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            display: inline-block;
-            margin: 10px 0;
+        .comments {
+            margin-top: 30px;
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form label {
+            display: block;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Stiffness Matrix</h1>
+    <header>
+        <h1>FEM Learning Hub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
+            <a href="stiffness-matrix.html">Stiffness Matrix</a>
+            <a href="boundary-conditions.html">Boundary Conditions</a>
+            <a href="shape-functions.html">Shape Functions</a>
+            <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
+            <a href="dynamic-analysis.html">Dynamic Analysis</a>
+            <a href="contact-form.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="references.html">References</a>
+        </nav>
+    </header>
+
+    <h1>The Stiffness Matrix: Fundamentals and Examples</h1>
 
     <h2>Introduction</h2>
-    <p>The stiffness matrix is a fundamental concept in FEM. It represents the relationship between nodal displacements and forces in a finite element system.</p>
+    <p>The stiffness matrix is a key concept in FEM representing the relationship between forces and displacements in a structure. It is fundamental for solving structural problems.</p>
 
-    <h2>Derivation of the Stiffness Matrix</h2>
-    <p>For a 1D bar element, the stiffness matrix can be derived using the principle of virtual work. The general form of the stiffness matrix for an element is:</p>
-    <div class="formula">
-        <pre>
-        K = E * A / L * [1 -1
-                         -1  1]
-        </pre>
-    </div>
-    <p>Where E is the Young's modulus, A is the cross-sectional area, and L is the length of the element.</p>
+    <h2>Stiffness Matrix Formulation</h2>
+    <p>The stiffness matrix <code>K</code> is derived from the principle of virtual work and can be expressed as:</p>
+    <pre>
+        K = ∫ (B^T D B) dV
+    </pre>
+    <p>where <code>B</code> is the strain-displacement matrix and <code>D</code> is the material property matrix.</p>
 
-    <h2>Example: 2D Triangular Element</h2>
-    <p>For a 2D triangular element, the stiffness matrix is more complex and involves the area of the triangle and the derivatives of the shape functions. It is generally represented as:</p>
-    <div class="formula">
-        <pre>
-        K = (t / 4A) * [a1^2 + a2^2  a1*a2
-                        a1*a2  a2^2 + a3^2]
-        </pre>
-    </div>
-    <p>Where t is the thickness, A is the area of the triangle, and a1, a2, a3 are the lengths of the sides.</p>
+    <h2>Example</h2>
+    <p>Consider a simple 2D element:</p>
+    <pre>
+        K = [  2 -1
+              -1  2 ]
+    </pre>
+    <p>This represents a basic stiffness matrix for a 1D bar element.</p>
+
+    <h2>Applications</h2>
+    <p>The stiffness matrix is used to solve equations of motion, determine displacements, and assess stresses in structural analysis.</p>
 
     <h2>Summary</h2>
-    <p>The stiffness matrix is critical for solving FEM problems as it determines how forces are distributed across the elements and is used to assemble the global stiffness matrix.</p>
+    <p>The stiffness matrix is crucial for understanding how a structure will respond to applied forces, and it's fundamental in FEM analysis.</p>
+
+    <div class="comments">
+        <h3>Comments</h3>
+        <form class="comment-form" action="submit_comment.php" method="post">
+            <label for="commenter-name">Name:</label>
+            <input type="text" id="commenter-name" name="commenter-name" required>
+
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+
+            <input type="submit" value="Post Comment">
+        </form>
+    </div>
 </body>
 </html>

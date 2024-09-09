@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shape Functions: Theory and Applications</title>
+    <title>Understanding Eigenvalues and Eigenvectors</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -50,24 +50,66 @@
         </nav>
     </header>
 
-    <h1>Shape Functions: Theory and Applications</h1>
+    <h1>Understanding Eigenvalues and Eigenvectors</h1>
 
     <h2>Introduction</h2>
-    <p>Shape functions are used in FEM to interpolate the solution over the domain of an element. They play a critical role in defining how the field variables vary within the element.</p>
+    <p>Eigenvalues and eigenvectors are fundamental concepts in linear algebra used to analyze linear transformations. In FEM, they are crucial for understanding how systems respond to different types of loads and constraints.</p>
 
-    <h2>Example: 1D Linear Shape Function</h2>
-    <p>For a 1D linear element:</p>
+    <h2>Example Matrix</h2>
     <pre>
-        N1 = 1 - ξ
-        N2 = ξ
+        A = [ 2 1 0
+              1 2 0
+              0 0 1 ]
     </pre>
-    <p>where <code>ξ</code> is the local coordinate within the element.</p>
 
-    <h2>Applications</h2>
-    <p>Shape functions are used to approximate displacements and stresses within the element, allowing for accurate simulation of structural behavior.</p>
+    <h2>Finding Eigenvalues</h2>
+    <p>To find the eigenvalues of matrix <code>A</code>, we solve the characteristic equation:</p>
+    <pre>
+        det(A - λI) = 0
+    </pre>
+    <p>For matrix <code>A</code>, this is:</p>
+    <pre>
+        det([ 2-λ 1   0
+              1   2-λ 0
+              0   0   1-λ ]) = (λ-1)(λ-3)^2
+    </pre>
+    <p>The eigenvalues are:</p>
+    <pre>
+        λ = 1
+        λ = 3 (with multiplicity 2)
+    </pre>
+
+    <h2>Finding Eigenvectors</h2>
+    <p>For each eigenvalue, solve the equation <code>(A - λI)v = 0</code>:</p>
+
+    <h3>For λ = 1:</h3>
+    <pre>
+        A - I = [ 1 1 0
+                  1 1 0
+                  0 0 0 ]
+    </pre>
+    <p>Solving this yields:</p>
+    <pre>
+        v = [ 1
+              -1
+               0 ]
+    </pre>
+
+    <h3>For λ = 3:</h3>
+    <pre>
+        A - 3I = [ -1 1 0
+                   1 -1 0
+                   0 0 -2 ]
+    </pre>
+    <p>Solving this yields:</p>
+    <pre>
+        v = [ 1
+              1
+              0 ]
+    </pre>
 
     <h2>Summary</h2>
-    <p>Shape functions are fundamental for the accurate representation of field variables in FEM and are essential for solving complex structural problems.</p>
+    <p>Eigenvalues provide insight into the scaling factor of the transformation, while eigenvectors indicate the direction of this scaling.</p>
 
     <div class="comments">
         <h3>Comments</h3>

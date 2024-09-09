@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boundary Conditions in FEM</title>
+    <title>Applying Boundary Conditions in FEM</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,54 +20,71 @@
             border: 1px solid #ddd;
             overflow-x: auto;
         }
-        .formula {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            display: inline-block;
-            margin: 10px 0;
+        .comments {
+            margin-top: 30px;
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form label {
+            display: block;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Boundary Conditions in FEM</h1>
+    <header>
+        <h1>FEM Learning Hub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
+            <a href="stiffness-matrix.html">Stiffness Matrix</a>
+            <a href="boundary-conditions.html">Boundary Conditions</a>
+            <a href="shape-functions.html">Shape Functions</a>
+            <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
+            <a href="dynamic-analysis.html">Dynamic Analysis</a>
+            <a href="contact-form.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="references.html">References</a>
+        </nav>
+    </header>
+
+    <h1>Applying Boundary Conditions in FEM</h1>
 
     <h2>Introduction</h2>
-    <p>Boundary conditions are essential for solving FEM problems as they define how the model interacts with its environment. They are applied to the edges or boundaries of the problem domain.</p>
+    <p>Boundary conditions are essential for defining how a structure is constrained or loaded in FEM. They ensure that the model accurately reflects real-world constraints and loads.</p>
 
     <h2>Types of Boundary Conditions</h2>
-    <ol>
-        <li><strong>Dirichlet Boundary Conditions:</strong> These specify the value of the variable at the boundary. For example, specifying a fixed temperature or displacement.</li>
-        <div class="formula">
-            <pre>
-            u(x) = u0
-            </pre>
-        </div>
-        <li><strong>Neumann Boundary Conditions:</strong> These specify the derivative of the variable at the boundary, often representing fluxes or forces.</li>
-        <div class="formula">
-            <pre>
-            σ * n = t
-            </pre>
-        </div>
-        <li><strong>Robin Boundary Conditions:</strong> A combination of Dirichlet and Neumann conditions, specifying both the value and the gradient of the variable.</li>
-        <div class="formula">
-            <pre>
-            α * u + β * ∂u/∂n = g
-            </pre>
-        </div>
-    </ol>
+    <ul>
+        <li><strong>Displacement Boundary Conditions:</strong> Specify the displacement of nodes.</li>
+        <li><strong>Force Boundary Conditions:</strong> Apply forces or loads to nodes.</li>
+    </ul>
 
-    <h2>Example: Fixed Support</h2>
-    <p>For a fixed support in a structural analysis problem, the boundary condition would be:</p>
-    <div class="formula">
-        <pre>
-        u = 0
-        v = 0
-        </pre>
-    </div>
-    <p>Where u and v are the displacements in the x and y directions, respectively.</p>
+    <h2>Example</h2>
+    <p>Consider a fixed-end beam:</p>
+    <pre>
+        u1 = 0  (fixed at one end)
+        u2 = 0  (fixed at one end)
+    </pre>
+
+    <h2>Applications</h2>
+    <p>Boundary conditions are used to model real-world constraints and loading conditions, such as fixed supports, roller supports, and applied forces.</p>
 
     <h2>Summary</h2>
-    <p>Applying the correct boundary conditions is crucial for obtaining accurate results in FEM analysis, as they represent the constraints and interactions of the model with its environment.</p>
+    <p>Correctly applying boundary conditions is crucial for accurate FEM simulations and ensuring realistic results.</p>
+
+    <div class="comments">
+        <h3>Comments</h3>
+        <form class="comment-form" action="submit_comment.php" method="post">
+            <label for="commenter-name">Name:</label>
+            <input type="text" id="commenter-name" name="commenter-name" required>
+
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+
+            <input type="submit" value="Post Comment">
+        </form>
+    </div>
 </body>
 </html>
