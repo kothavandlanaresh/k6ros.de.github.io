@@ -19,11 +19,14 @@
             background-color: #333;
             padding: 10px;
             justify-content: space-between;
+            position: relative;
+            z-index: 1;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
+            margin-left: 60px; /* Space for the sidebar */
         }
 
         .logo-container img {
@@ -42,11 +45,12 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: -250px; /* Hide sidebar off-screen initially */
+            left: 0; /* Always visible */
             height: 100%;
             width: 250px;
             background-color: #444;
-            transition: left 0.3s ease;
+            transition: transform 0.3s ease;
+            transform: translateX(0); /* Sidebar is visible */
             z-index: 1000;
         }
 
@@ -69,6 +73,9 @@
             padding: 10px;
             cursor: pointer;
             font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         /* Mobile View */
@@ -88,15 +95,6 @@
 </head>
 <body>
 
-    <!-- Header Section with collapsible and logo -->
-    <div class="header">
-        <button class="collapsible" onclick="toggleSidebar()">☰</button>
-        <div class="logo-container">
-            <img src="logo.png" alt="K-SIX Logo">
-            <span class="logo-text">K-SIX</span>
-        </div>
-    </div>
-
     <!-- Sidebar for navigation -->
     <div id="sidebar" class="sidebar">
         <a href="#home">Home</a>
@@ -105,15 +103,21 @@
         <a href="#contact">Contact</a>
     </div>
 
+    <!-- Header Section with logo and collapsible button -->
+    <div class="header">
+        <button class="collapsible" onclick="toggleSidebar()">☰</button>
+        <div class="logo-container">
+            <img src="logo.png" alt="K-SIX Logo">
+            <span class="logo-text">K-SIX</span>
+        </div>
+    </div>
+
     <script>
-        // Toggle the sidebar
+        // Toggle the sidebar (for demonstration purposes)
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
-            if (sidebar.style.left === "0px") {
-                sidebar.style.left = "-250px";
-            } else {
-                sidebar.style.left = "0px";
-            }
+            const isVisible = sidebar.style.transform === "translateX(0px)";
+            sidebar.style.transform = isVisible ? "translateX(-250px)" : "translateX(0px)";
         }
     </script>
 
