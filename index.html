@@ -3,46 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Your hub for Finite Element Method insights and discussions. Explore daily FEM posts, tutorials, and case studies.">
+    <title>FEM Hub - Master the Finite Element Method</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="nav-bar">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="eigen_vectors_and_values.html" class="nav-link">Eigen Vectors and Values</a></li>
-                <li><a href="fem_topics.html" class="nav-link">FEM Topics</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">FEM Hub</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="posts.html">Daily Posts</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="discussion.html">Discussions</a></li>
+                </ul>
+            </div>
         </nav>
-        <div class="banner">
-            <h1>Welcome to the FEM Learning Hub</h1>
-            <p>Explore key topics on Finite Element Method and more!</p>
-        </div>
     </header>
 
     <main>
-        <section class="intro">
-            <h2>Explore FEM Concepts</h2>
-            <p>We provide an in-depth look at various topics in Finite Element Method (FEM) with clear explanations, images, and examples.</p>
+        <section class="hero">
+            <div class="container">
+                <h1>Master the Finite Element Method</h1>
+                <p>Explore in-depth FEM topics, tutorials, and real-world applications. Join the conversation and deepen your understanding!</p>
+                <a href="posts.html" class="cta-button">Explore FEM Topics</a>
+            </div>
         </section>
 
-        <section class="topics-section">
-            <h2>FEM Topics</h2>
-            <div class="topic-buttons">
-                <a href="fem_intro.html" class="btn">Introduction to FEM</a>
-                <a href="shape_functions.html" class="btn">Shape Functions</a>
-                <a href="stiffness_matrix.html" class="btn">Stiffness Matrix</a>
-                <a href="boundary_conditions.html" class="btn">Boundary Conditions</a>
-                <a href="numerical_integration.html" class="btn">Numerical Integration</a>
-                <a href="mesh_generation.html" class="btn">Mesh Generation</a>
+        <section class="latest-posts">
+            <div class="container">
+                <h2>Latest Posts</h2>
+                <div class="post">
+                    <img src="images/post1.jpg" alt="Mesh Refinement">
+                    <h3><a href="post.html">Mesh Refinement Techniques for Accurate Results</a></h3>
+                    <p>Learn how to improve FEM results through effective mesh refinement strategies. Step-by-step guide with visuals.</p>
+                </div>
+                <div class="post">
+                    <img src="images/post2.jpg" alt="Nonlinear FEM">
+                    <h3><a href="post.html">A Deep Dive into Nonlinear Finite Element Analysis</a></h3>
+                    <p>Understand the complexities of nonlinear FEM analysis and how it applies to real-world engineering problems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Join the FEM Discussion</h2>
+                <p>Ask questions, share your insights, and learn from a growing community of FEM experts and enthusiasts.</p>
+                <a href="discussion.html" class="cta-button">Join Discussions</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 FEM Learning Hub</p>
+        <div class="container">
+            <p>&copy; 2024 FEM Hub. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
