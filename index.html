@@ -32,6 +32,23 @@
             transition: width 0.3s ease;
             box-shadow: 0 1px 5px rgba(0,0,0,0.2); /* Optional: adds a shadow to distinguish the header */
         }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-left .toggle-sidebar {
+            background-color: #0366d6; /* Sidebar toggle button color */
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-right: 10px; /* Space between button and title */
+            font-size: 1.5rem; /* Increase font size for better visibility */
+        }
+        .header-left .toggle-sidebar:hover {
+            background-color: #0056b3;
+        }
         header h1 {
             margin: 0;
             font-size: 1.8rem;
@@ -46,17 +63,6 @@
         .header-actions {
             display: flex;
             align-items: center;
-        }
-        .header-actions button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        .header-actions button:hover {
-            color: #0056b3;
         }
         .header-actions .user-icon {
             background: url('user-icon.png') no-repeat center center;
@@ -118,23 +124,6 @@
             margin-left: 0;
         }
 
-        /* Sidebar toggle button */
-        .toggle-sidebar {
-            background-color: #0366d6; /* Sidebar toggle button color */
-            border: none;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 3px;
-            position: fixed;
-            top: 80px; /* Adjusted top position */
-            left: 20px;
-            z-index: 1001;
-        }
-        .toggle-sidebar:hover {
-            background-color: #0056b3;
-        }
-
         /* Responsive adjustments */
         @media (max-width: 768px) {
             nav {
@@ -153,9 +142,11 @@
 
     <!-- Header Banner -->
     <header>
-        <h1><a href="index.html">K-SIX</a></h1>
-        <div class="header-actions">
+        <div class="header-left">
             <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+            <h1><a href="index.html">K-SIX</a></h1>
+        </div>
+        <div class="header-actions">
             <div class="user-icon"></div>
         </div>
     </header>
