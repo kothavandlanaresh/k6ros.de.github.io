@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>K-SIX - Derivation of Ax=B from Poisson's Equation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- MathJax for rendering math formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+                <!-- Logo -->
+                <div id="logo">
+                    <h1><a href="index.html" class="logo-text">K-SIX</a></h1>
+                </div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Welcome</a></li>
+                        <li><a href="fem.html">FEM</a></li>
+                        <li><a href="poissons-equation.html">Poisson's Equation</a></li>
+                        <li class="current"><a href="poissons-derivation.html">Derivation of Ax=B</a></li>
+                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                        <li><a href="no-sidebar.html">No Sidebar</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <!-- Main Content -->
+        <div id="main-wrapper">
+            <div class="container">
+                <div class="row gtr-200">
+                    <div class="col-12">
+
+                        <!-- Content: Derivation of Ax=B -->
+                        <div id="content">
+                            <section class="last">
+                                <h2>Derivation of \( \mathbf{A} \mathbf{x} = \mathbf{B} \) from Poisson's Equation</h2>
+
+                                <h3>1. Background: Poisson's Equation</h3>
+                                <p>
+                                    Poisson's Equation is given by:
+                                </p>
+                                <p>
+                                    \[
+                                    \nabla^2 \phi = -\frac{\rho}{\epsilon_0}
+                                    \]
+                                </p>
+                                <p>
+                                    Where \( \nabla^2 \) is the Laplacian operator, \( \phi \) is the potential function, \( \rho \) is the source term (charge density), and \( \epsilon_0 \) is the permittivity of free space.
+                                </p>
+
+                                <h3>2. Minimization of Potential Energy</h3>
+                                <p>
+                                    In the context of finite element analysis (FEM), we approach the problem by minimizing the total potential energy of the system.
+                                </p>
+                                <p>
+                                    The potential energy functional \( \Pi \) is given by:
+                                </p>
+                                <p>
+                                    \[
+                                    \Pi(\phi) = \frac{1}{2} \int_\Omega \nabla \phi \cdot \nabla \phi \, d\Omega - \int_\Omega \phi \cdot \frac{\rho}{\epsilon_0} \, d\Omega
+                                    \]
+                                </p>
+                                <p>
+                                    To find the equilibrium solution, we seek to minimize \( \Pi(\phi) \) by solving:
+                                </p>
+                                <p>
+                                    \[
+                                    \frac{\delta \Pi(\phi)}{\delta \phi} = 0
+                                    \]
+                                </p>
+
+                                <h3>3. Derivation of the Discrete System \( \mathbf{A} \mathbf{x} = \mathbf{B} \)</h3>
+                                <p>
+                                    In FEM, the domain \(\Omega\) is discretized into smaller elements. The continuous problem is approximated by:
+                                </p>
+                                <p>
+                                    <strong>Approximation:</strong> The potential \( \phi \) is approximated by a finite set of basis functions:
+                                </p>
+                                <p>
+                                    \[
+                                    \phi \approx \sum_{i=1}^n \phi_i \, N_i(\mathbf{x})
+                                    \]
+                                </p>
+                                <p>
+                                    <strong>Weak Formulation:</strong> We convert the PDE to its weak form by multiplying with a test function \( v \) and integrating:
+                                </p>
+                                <p>
+                                    \[
+                                    \int_\Omega \nabla \phi \cdot \nabla v \, d\Omega = \int_\Omega \frac{\rho}{\epsilon_0} \cdot v \, d\Omega
+                                    \]
+                                </p>
+                                <p>
+                                    <strong>Matrix Form:</strong> The weak form is converted into matrix form:
+                                </p>
+                                <p>
+                                    \[
+                                    \mathbf{K} \mathbf{u} = \mathbf{F}
+                                    \]
+                                </p>
+                                <p>
+                                    Where \( \mathbf{K} \) is the stiffness matrix and \( \mathbf{F} \) is the force vector.
+                                </p>
+
+                                <h3>4. Strong Form vs Weak Form</h3>
+                                <p>
+                                    <strong>Strong Form:</strong> The original Poisson's equation:
+                                </p>
+                                <p>
+                                    \[
+                                    \nabla^2 \phi = -\frac{\rho}{\epsilon_0}
+                                    \]
+                                </p>
+                                <p>
+                                    <strong>Weak Form:</strong> The weak form:
+                                </p>
+                                <p>
+                                    \[
+                                    \int_\Omega \nabla \phi \cdot \nabla v \, d\Omega = \int_\Omega \frac{\rho}{\epsilon_0} \cdot v \, d\Omega
+                                    \]
+                                </p>
+                                <p>
+                                    The weak form accommodates irregular geometries and boundary conditions more flexibly.
+                                </p>
+
+                                <a href="fem.html" class="button icon solid fa-arrow-circle-left">Back to FEM Overview</a>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-wrapper">
+            <footer id="footer" class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="menu">
+                                <li>&copy; K-SIX. All rights reserved</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
