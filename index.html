@@ -3,36 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My YouTube-like Page</title>
+    <title>FEM Daily Columns</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">MyTube</div>
-        <input type="text" class="search-bar" placeholder="Search">
-        <div class="user-icon">U</div>
+        <h1>FEM Daily Columns</h1>
     </header>
     <main>
-        <div class="sidebar">
-            <ul>
-                <li>Home</li>
-                <li>Trending</li>
-                <li>Subscriptions</li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="video">
-                <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail">
-                <div class="video-info">
-                    <h3>Video Title</h3>
-                    <p>Channel Name</p>
-                </div>
+        <section id="columns">
+            <h2>Today's Column</h2>
+            <div id="column-content">
+                <!-- Content will be added here -->
             </div>
-            <!-- Add more video blocks as needed -->
-        </div>
+        </section>
+        <section id="add-column">
+            <h2>Add New Column</h2>
+            <form id="column-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="10" required></textarea>
+                <button type="submit">Add Column</button>
+            </form>
+        </section>
     </main>
-    <footer>
-        <p>© 2024 MyTube. All rights reserved.</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
