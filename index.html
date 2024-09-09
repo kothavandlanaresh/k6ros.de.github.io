@@ -3,209 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-SIX</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>K-SIX Page</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        /* Basic reset and box sizing */
+        * {
             margin: 0;
             padding: 0;
-            color: #202020;
+            box-sizing: border-box;
+        }
+        
+        /* Container styling */
+        .header {
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
         }
 
-        /* Header styles */
-        header {
-            background-color: #333; /* Dark color for header */
-            padding: 10px 20px;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.2); /* Optional shadow */
-        }
-        .header-left {
-            display: flex;
-            align-items: center;
-        }
-        .header-left .toggle-sidebar {
-            background-color: #444; /* Sidebar toggle button color */
+        /* Collapsible button styling */
+        .collapsible {
+            background-color: #444;
             border: none;
             color: white;
             padding: 10px;
             cursor: pointer;
-            border-radius: 3px;
-            font-size: 1.5rem; /* Larger icon for visibility */
-            margin-right: 15px;
+            font-size: 16px;
         }
-        .header-left .toggle-sidebar:hover {
-            background-color: #555;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-        }
-        header h1 a {
-            color: white;
-            text-decoration: none;
-        }
-        header h1 a:hover {
-            text-decoration: underline;
-        }
-        .search-bar {
-            flex: 1;
+
+        /* Logo styling */
+        .logo-container {
             display: flex;
-            justify-content: center;
             align-items: center;
+            margin-left: 10px;
         }
-        .search-bar input {
-            width: 100%;
-            padding: 8px;
-            border: none;
-            border-radius: 2px;
-            font-size: 1rem;
+
+        .logo-container img {
+            height: 40px;
             margin-right: 10px;
         }
-        .header-actions {
-            display: flex;
-            align-items: center;
-        }
-        .header-actions .icon {
-            font-size: 1.5rem;
+
+        /* Text styling */
+        .logo-text {
             color: white;
-            margin-left: 15px;
-            cursor: pointer;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
         }
 
-        /* Sidebar styles */
-        nav {
-            background-color: #333; /* Dark color for sidebar */
-            width: 250px;
-            height: calc(100vh - 60px); /* Full height minus header height */
-            position: fixed;
-            top: 60px; /* Start below the header */
-            left: 0;
-            transition: transform 0.3s ease;
-            z-index: 999;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-        }
-        nav a {
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 1rem;
-            border-bottom: 1px solid #444;
-        }
-        nav a:hover {
-            background-color: #555; /* Hover color for links */
-        }
-        .sidebar-hidden {
-            transform: translateX(-250px);
-        }
-
-        /* Main content area */
-        .main {
-            display: flex;
-            flex: 1;
-            margin-left: 250px; /* Space for sidebar */
-            margin-top: 60px; /* Space for header */
-            transition: margin-left 0.3s ease;
-        }
-        .content {
-            padding: 20px;
-            width: 100%;
-        }
-
-        /* When sidebar is hidden */
-        .content-full {
-            margin-left: 0; /* Full width when sidebar is hidden */
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            nav {
-                width: 200px;
+        /* Media Query for small screens */
+        @media (max-width: 600px) {
+            .logo-text {
+                font-size: 18px;
             }
-            .main {
-                margin-left: 200px;
-            }
-            .sidebar-hidden {
-                transform: translateX(-200px);
+            .logo-container img {
+                height: 30px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Banner -->
-    <header>
-        <div class="header-left">
-            <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
-            <h1><a href="index.html">K-SIX</a></h1>
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-        </div>
-        <div class="header-actions">
-            <div class="icon">🔔</div>
-            <div class="icon">👤</div>
-        </div>
-    </header>
-
-    <!-- Main Layout -->
-    <div class="main">
-        <!-- Collapsible Sidebar -->
-        <nav id="sidebar">
-            <a href="index.html">Home</a>
-            <a href="shorts.html">Shorts</a>
-            <a href="subscriptions.html">Subscriptions</a>
-            <a href="library.html">Library</a>
-            <a href="history.html">History</a>
-            <a href="your-videos.html">Your Videos</a>
-            <a href="watch-later.html">Watch Later</a>
-            <a href="liked-videos.html">Liked Videos</a>
-            <!-- Additional sidebar links can be added here -->
-        </nav>
-
-        <!-- Content Area -->
-        <div class="content" id="content">
-            <h2>Welcome to K-SIX</h2>
-            <p>This website provides comprehensive information and resources on Finite Element Method (FEM), including detailed explanations, examples, and tutorials.</p>
-
-            <h3>Latest Topics</h3>
-            <div class="topics">
-                <ul>
-                    <li><a href="eigenvalues.html">Understanding Eigenvalues and Eigenvectors</a></li>
-                    <li><a href="stiffness-matrix.html">The Stiffness Matrix: Fundamentals and Examples</a></li>
-                    <li><a href="boundary-conditions.html">Applying Boundary Conditions in FEM</a></li>
-                    <li><a href="shape-functions.html">Shape Functions: Theory and Applications</a></li>
-                </ul>
-            </div>
+    <!-- Header Section with collapsible and logo -->
+    <div class="header">
+        <button class="collapsible" onclick="toggleMenu()">☰</button>
+        <div class="logo-container">
+            <img src="logo.png" alt="K-SIX Logo">
+            <span class="logo-text">K-SIX</span>
         </div>
     </div>
 
     <script>
-        // Function to toggle the sidebar
-        function toggleSidebar() {
-            var sidebar = document.getElementById('sidebar');
-            var content = document.getElementById('content');
-
-            // Toggle sidebar visibility
-            sidebar.classList.toggle('sidebar-hidden');
-
-            // Adjust content margin based on sidebar visibility
-            content.classList.toggle('content-full');
+        function toggleMenu() {
+            // Functionality for collapsible button (can be customized)
+            alert("Menu toggled!");
         }
     </script>
 
 </body>
 </html>
-
