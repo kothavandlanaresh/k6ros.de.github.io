@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>K-SIX - FEM Introduction</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- MathJax for rendering math formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+                <!-- Logo -->
+                <div id="logo">
+                    <h1><a href="index.html" class="logo-text">K-SIX</a></h1>
+                </div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Welcome</a></li>
+                        <li class="current"><a href="fem.html">FEM</a></li>
+                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                        <li><a href="no-sidebar.html">No Sidebar</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <!-- Main Content -->
+        <div id="main-wrapper">
+            <div class="container">
+                <div class="row gtr-200">
+                    <div class="col-12">
+
+                        <!-- Content: Minimizing Potential Energy Explanation -->
+                        <div id="content">
+                            <section class="last">
+                                <h2>Why Minimizing Potential Energy Gives Us the AX=B Form</h2>
+                                <p>
+                                    In many physical systems, especially in structural analysis and mechanics, we seek to minimize potential energy to find stable equilibrium configurations. This minimization can often be expressed as a system of equations of the form \( \mathbf{A}\mathbf{x} = \mathbf{b} \).
+                                </p>
+
+                                <h3>The Principle of Minimum Potential Energy</h3>
+                                <p>
+                                    The potential energy \( \Pi \) of a system is typically the sum of the strain energy and the potential of external forces. If we denote the displacement vector as \( \mathbf{u} \), the potential energy can be written as:
+                                </p>
+                                <p>
+                                    \[
+                                    \Pi(\mathbf{u}) = \frac{1}{2} \mathbf{u}^T \mathbf{K} \mathbf{u} - \mathbf{u}^T \mathbf{f}
+                                    \]
+                                </p>
+                                <p>
+                                    Where:
+                                    <ul>
+                                        <li>\( \mathbf{K} \) is the stiffness matrix (related to the material properties and geometry).</li>
+                                        <li>\( \mathbf{f} \) is the vector of external forces applied to the system.</li>
+                                    </ul>
+                                </p>
+
+                                <h3>Deriving the Equilibrium Condition</h3>
+                                <p>
+                                    To find the equilibrium, we minimize the potential energy with respect to the displacement vector \( \mathbf{u} \). This requires taking the derivative of \( \Pi(\mathbf{u}) \) with respect to \( \mathbf{u} \) and setting it to zero:
+                                </p>
+                                <p>
+                                    \[
+                                    \frac{d\Pi}{d\mathbf{u}} = \mathbf{K} \mathbf{u} - \mathbf{f} = 0
+                                    \]
+                                </p>
+                                <p>
+                                    Which simplifies to the linear system:
+                                </p>
+                                <p>
+                                    \[
+                                    \mathbf{K} \mathbf{u} = \mathbf{f}
+                                    \]
+                                </p>
+                                <p>
+                                    This is in the form \( \mathbf{A} \mathbf{x} = \mathbf{b} \), where:
+                                    <ul>
+                                        <li>\( \mathbf{A} \) corresponds to the stiffness matrix \( \mathbf{K} \).</li>
+                                        <li>\( \mathbf{x} \) corresponds to the displacement vector \( \mathbf{u} \).</li>
+                                        <li>\( \mathbf{b} \) corresponds to the external force vector \( \mathbf{f} \).</li>
+                                    </ul>
+                                </p>
+
+                                <h3>Conclusion</h3>
+                                <p>
+                                    Thus, minimizing the potential energy of a system leads to a linear system of equations of the form \( \mathbf{A} \mathbf{x} = \mathbf{b} \), which can be solved to find the displacements or other unknowns.
+                                </p>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-wrapper">
+            <footer id="footer" class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="menu">
+                                <li>&copy; K-SIX. All rights reserved</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
