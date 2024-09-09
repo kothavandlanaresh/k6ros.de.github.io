@@ -28,8 +28,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            width: calc(100% - 250px); /* Adjusted width to account for sidebar */
-            transition: width 0.3s ease;
+            width: 100%;
             box-shadow: 0 1px 5px rgba(0,0,0,0.2); /* Optional: adds a shadow to distinguish the header */
         }
         .header-left {
@@ -77,9 +76,9 @@
         nav {
             background-color: #24292f; /* Dark color for sidebar */
             width: 250px;
-            height: 100vh;
+            height: calc(100vh - 60px); /* Full height minus header height */
             position: fixed;
-            top: 0;
+            top: 60px; /* Start below the header */
             left: 0;
             transition: transform 0.3s ease;
             z-index: 999;
@@ -200,7 +199,7 @@
             // Adjust header width based on sidebar visibility
             var header = document.querySelector('header');
             if (sidebar.classList.contains('sidebar-hidden')) {
-                header.style.width = 'calc(100% - 0px)';
+                header.style.width = '100%';
             } else {
                 header.style.width = 'calc(100% - 250px)';
             }
