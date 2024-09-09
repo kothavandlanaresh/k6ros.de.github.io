@@ -5,121 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
-            color: #24292f;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Header styles */
-        #header-wrapper {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-            background-color: #24292f;
-            padding: 10px 20px;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-        }
-        #header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        #logo {
-            display: flex;
-            align-items: center;
-        }
-        #logo h1 a {
-            color: white;
-            text-decoration: none;
-        }
-        #logo h1 a:hover {
-            text-decoration: underline;
-        }
-        .toggle-sidebar {
-            background-color: #0366d6;
-            border: none;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 3px;
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-        .toggle-sidebar:hover {
-            background-color: #0056b3;
-        }
-
-        /* Sidebar styles */
-        #nav {
-            background-color: #24292f;
-            width: 250px;
-            height: calc(100vh - 60px);
-            position: fixed;
-            top: 60px;
-            left: 0;
-            transition: transform 0.3s ease;
-            z-index: 999;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            transform: translateX(0);
-        }
-        #nav a {
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 1rem;
-            border-bottom: 1px solid #444;
-        }
-        #nav a:hover {
-            background-color: #0366d6;
-        }
-
-        /* Hide the sidebar */
-        .sidebar-hidden {
-            transform: translateX(-250px);
-        }
-
-        /* Main content area */
-        #main-wrapper {
-            margin-left: 250px;
-            margin-top: 60px;
-            display: flex;
-            flex: 1;
-            transition: margin-left 0.3s ease;
-        }
-        #content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            width: 100%;
-        }
-        .content-full {
-            margin-left: 0;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            #nav {
-                width: 200px;
-            }
-            #main-wrapper {
-                margin-left: 200px;
-            }
-            .sidebar-hidden {
-                transform: translateX(-200px);
-            }
-        }
-    </style>
 </head>
 <body class="is-preload homepage">
 
@@ -127,42 +12,23 @@
     <div id="header-wrapper">
         <header id="header" class="container">
             <div id="logo">
-                <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
                 <h1><a href="index.html">K-SIX</a></h1>
             </div>
         </header>
     </div>
 
-    <!-- Main Layout -->
+    <!-- Main -->
     <div id="main-wrapper">
-        <!-- Collapsible Sidebar -->
-        <nav id="nav" class="sidebar-hidden">
-            <a href="index.html">Home</a>
-            <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
-            <a href="stiffness-matrix.html">Stiffness Matrix</a>
-            <a href="boundary-conditions.html">Boundary Conditions</a>
-            <a href="shape-functions.html">Shape Functions</a>
-            <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
-            <a href="dynamic-analysis.html">Dynamic Analysis</a>
-            <a href="contact-form.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="references.html">References</a>
-        </nav>
-
-        <!-- Content Area -->
-        <div id="content">
-            <h2>Welcome to K-SIX</h2>
-            <p>This website provides comprehensive information and resources on Finite Element Method (FEM), including detailed explanations, examples, and tutorials.</p>
-
-            <h3>Latest Topics</h3>
-            <div class="topics">
-                <ul>
-                    <li><a href="eigenvalues.html">Understanding Eigenvalues and Eigenvectors</a></li>
-                    <li><a href="stiffness-matrix.html">The Stiffness Matrix: Fundamentals and Examples</a></li>
-                    <li><a href="boundary-conditions.html">Applying Boundary Conditions in FEM</a></li>
-                    <li><a href="shape-functions.html">Shape Functions: Theory and Applications</a></li>
-                </ul>
+        <div id="main" class="container">
+            <div class="row">
+                <div class="col-8 col-12-medium">
+                    <section>
+                        <header>
+                            <h2>Welcome to K-SIX</h2>
+                        </header>
+                        <p>This website provides comprehensive information and resources on Finite Element Method (FEM), including detailed explanations, examples, and tutorials.</p>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
@@ -211,19 +77,6 @@
         </footer>
     </div>
 
-    <script>
-        // Function to toggle the sidebar
-        function toggleSidebar() {
-            var sidebar = document.getElementById('nav');
-            var content = document.getElementById('content');
-
-            // Toggle sidebar visibility
-            sidebar.classList.toggle('sidebar-hidden');
-
-            // Adjust content margin based on sidebar visibility
-            content.classList.toggle('content-full');
-        }
-    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
