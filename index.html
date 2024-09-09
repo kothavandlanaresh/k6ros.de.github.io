@@ -29,7 +29,7 @@
             width: 100%;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Center align header content */
         }
         header h1 {
             margin: 0;
@@ -41,24 +41,6 @@
         }
         header h1 a:hover {
             text-decoration: underline;
-        }
-        .toggle-sidebar {
-            background-color: #0366d6; /* Sidebar toggle button color */
-            border: none;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-        .toggle-sidebar:hover {
-            background-color: #0056b3;
-        }
-
-        /* Main layout */
-        .main {
-            display: flex;
-            flex: 1;
-            transition: margin-left 0.3s ease;
         }
 
         /* Sidebar styles */
@@ -89,10 +71,35 @@
             transform: translateX(-250px);
         }
 
+        /* Sidebar toggle button */
+        .toggle-sidebar {
+            background-color: #0366d6; /* Sidebar toggle button color */
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            position: fixed;
+            top: 20px; /* Align with header */
+            left: 0;
+            z-index: 1001;
+            transition: background-color 0.3s;
+        }
+        .toggle-sidebar:hover {
+            background-color: #0056b3;
+        }
+
+        /* Main layout */
+        .main {
+            display: flex;
+            flex: 1;
+            transition: margin-left 0.3s ease;
+            margin-left: 250px; /* Adjust for sidebar width */
+        }
+
         /* Content area styles */
         .content {
             flex: 1;
-            margin-left: 250px;
             padding: 20px;
             transition: margin-left 0.3s ease;
         }
@@ -118,28 +125,29 @@
 </head>
 <body>
 
-    <!-- Header Banner -->
-    <header>
-        <h1><a href="index.html">K-SIX</a></h1>
-        <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
-    </header>
+    <!-- Sidebar toggle button -->
+    <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
 
     <!-- Main Layout -->
-    <div class="main">
-        <!-- Collapsible Sidebar -->
-        <nav id="sidebar">
-            <a href="index.html">Home</a>
-            <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
-            <a href="stiffness-matrix.html">Stiffness Matrix</a>
-            <a href="boundary-conditions.html">Boundary Conditions</a>
-            <a href="shape-functions.html">Shape Functions</a>
-            <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
-            <a href="dynamic-analysis.html">Dynamic Analysis</a>
-            <a href="contact-form.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="references.html">References</a>
-        </nav>
+    <nav id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
+        <a href="stiffness-matrix.html">Stiffness Matrix</a>
+        <a href="boundary-conditions.html">Boundary Conditions</a>
+        <a href="shape-functions.html">Shape Functions</a>
+        <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
+        <a href="dynamic-analysis.html">Dynamic Analysis</a>
+        <a href="contact-form.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="references.html">References</a>
+    </nav>
+
+    <div class="main" id="main-content">
+        <!-- Header Banner -->
+        <header>
+            <h1><a href="index.html">K-SIX</a></h1>
+        </header>
 
         <!-- Content Area -->
         <div class="content" id="content">
@@ -163,12 +171,14 @@
         function toggleSidebar() {
             var sidebar = document.getElementById('sidebar');
             var content = document.getElementById('content');
+            var mainContent = document.getElementById('main-content');
 
             // Toggle sidebar visibility
             sidebar.classList.toggle('sidebar-hidden');
 
             // Adjust content margin based on sidebar visibility
             content.classList.toggle('content-full');
+            mainContent.classList.toggle('content-full');
         }
     </script>
 
