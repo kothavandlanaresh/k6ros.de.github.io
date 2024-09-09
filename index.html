@@ -13,11 +13,18 @@
             margin: 0;
             padding: 0;
             color: #24292f;
+            display: flex;
+            min-height: 100vh;
         }
         header {
             background-color: #24292f;
             padding: 10px 20px;
             color: white;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
         }
         header h1 a {
             color: white;
@@ -26,32 +33,33 @@
         header h1 a:hover {
             text-decoration: underline;
         }
-        h1 {
-            font-size: 1.8rem;
-            margin: 0;
-        }
         nav {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
             background-color: #24292f;
+            padding: 10px;
+            width: 250px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
         }
         nav a {
             color: white;
             padding: 10px;
             text-decoration: none;
             font-size: 0.9rem;
+            border-bottom: 1px solid #444;
         }
         nav a:hover {
             background-color: #0366d6;
         }
         .container {
-            max-width: 1200px;
+            width: 50%;
             margin: auto;
             padding: 20px;
             background-color: white;
             border-radius: 6px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-left: 50px;
+            flex-grow: 1;
         }
         .topics ul {
             padding-left: 0;
@@ -76,24 +84,25 @@
 </head>
 <body>
     <header>
-        <h1><a href="index.html">KSIX</a></h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
-            <a href="stiffness-matrix.html">Stiffness Matrix</a>
-            <a href="boundary-conditions.html">Boundary Conditions</a>
-            <a href="shape-functions.html">Shape Functions</a>
-            <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
-            <a href="dynamic-analysis.html">Dynamic Analysis</a>
-            <a href="contact-form.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="references.html">References</a>
-        </nav>
+        <h1><a href="index.html">K-SIX</a></h1>
     </header>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
+        <a href="stiffness-matrix.html">Stiffness Matrix</a>
+        <a href="boundary-conditions.html">Boundary Conditions</a>
+        <a href="shape-functions.html">Shape Functions</a>
+        <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
+        <a href="dynamic-analysis.html">Dynamic Analysis</a>
+        <a href="contact-form.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="references.html">References</a>
+    </nav>
+
     <div class="container">
-        <h2>Welcome to KSIX</h2>
+        <h2>Welcome to K-SIX</h2>
         <p>This website provides comprehensive information and resources on Finite Element Method (FEM), including detailed explanations, examples, and tutorials.</p>
 
         <h3>Latest Topics</h3>
