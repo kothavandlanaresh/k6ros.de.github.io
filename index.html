@@ -17,19 +17,18 @@
             min-height: 100vh;
         }
 
-        /* Header banner */
+        /* Header styles */
         header {
             background-color: #24292f; /* Dark color for header */
             padding: 10px 20px;
             color: white;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 1000;
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Center align header content */
         }
         header h1 {
             margin: 0;
@@ -42,6 +41,29 @@
         header h1 a:hover {
             text-decoration: underline;
         }
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        .header-actions button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .header-actions button:hover {
+            color: #0056b3;
+        }
+        .header-actions .user-icon {
+            background: url('user-icon.png') no-repeat center center;
+            background-size: cover;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
 
         /* Sidebar styles */
         nav {
@@ -53,6 +75,9 @@
             left: 0;
             transition: transform 0.3s ease;
             z-index: 999;
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
         }
         nav a {
             color: white;
@@ -80,7 +105,7 @@
             cursor: pointer;
             border-radius: 3px;
             position: fixed;
-            top: 20px; /* Align with header */
+            top: 20px;
             left: 0;
             z-index: 1001;
             transition: background-color 0.3s;
@@ -94,12 +119,12 @@
             display: flex;
             flex: 1;
             transition: margin-left 0.3s ease;
-            margin-left: 250px; /* Adjust for sidebar width */
         }
 
         /* Content area styles */
         .content {
             flex: 1;
+            margin-left: 250px;
             padding: 20px;
             transition: margin-left 0.3s ease;
         }
@@ -125,29 +150,31 @@
 </head>
 <body>
 
-    <!-- Sidebar toggle button -->
-    <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+    <!-- Header Banner -->
+    <header>
+        <h1><a href="index.html">K-SIX</a></h1>
+        <div class="header-actions">
+            <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+            <div class="user-icon"></div>
+        </div>
+    </header>
 
     <!-- Main Layout -->
-    <nav id="sidebar">
-        <a href="index.html">Home</a>
-        <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
-        <a href="stiffness-matrix.html">Stiffness Matrix</a>
-        <a href="boundary-conditions.html">Boundary Conditions</a>
-        <a href="shape-functions.html">Shape Functions</a>
-        <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
-        <a href="dynamic-analysis.html">Dynamic Analysis</a>
-        <a href="contact-form.html">Contact</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="references.html">References</a>
-    </nav>
-
-    <div class="main" id="main-content">
-        <!-- Header Banner -->
-        <header>
-            <h1><a href="index.html">K-SIX</a></h1>
-        </header>
+    <div class="main">
+        <!-- Collapsible Sidebar -->
+        <nav id="sidebar">
+            <a href="index.html">Home</a>
+            <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
+            <a href="stiffness-matrix.html">Stiffness Matrix</a>
+            <a href="boundary-conditions.html">Boundary Conditions</a>
+            <a href="shape-functions.html">Shape Functions</a>
+            <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
+            <a href="dynamic-analysis.html">Dynamic Analysis</a>
+            <a href="contact-form.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="references.html">References</a>
+        </nav>
 
         <!-- Content Area -->
         <div class="content" id="content">
@@ -171,14 +198,12 @@
         function toggleSidebar() {
             var sidebar = document.getElementById('sidebar');
             var content = document.getElementById('content');
-            var mainContent = document.getElementById('main-content');
 
             // Toggle sidebar visibility
             sidebar.classList.toggle('sidebar-hidden');
 
             // Adjust content margin based on sidebar visibility
             content.classList.toggle('content-full');
-            mainContent.classList.toggle('content-full');
         }
     </script>
 
