@@ -3,98 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .banner {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-size: 24px;
-        }
-        .menu {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            overflow: hidden;
-        }
-        .menu button {
-            background-color: #444;
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: left;
-            cursor: pointer;
-            width: 100%;
-            border-bottom: 1px solid #555;
-        }
-        .menu button:hover {
-            background-color: #555;
-        }
-        .menu-content {
-            display: none;
-            background-color: #f1f1f1;
-            padding: 10px;
-        }
-        .menu-content a {
-            display: block;
-            color: #333;
-            padding: 8px;
-            text-decoration: none;
-        }
-        .menu-content a:hover {
-            background-color: #ddd;
-        }
-        .main-content {
-            padding: 20px;
-        }
-    </style>
+    <title>My YouTube-like Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="banner">
-        Welcome to My Website
-    </div>
-
-    <div class="menu">
-        <button class="collapsible">Menu 1</button>
-        <div class="menu-content">
-            <a href="#section1">Section 1</a>
-            <a href="#section2">Section 2</a>
+    <header>
+        <div class="logo">MyTube</div>
+        <input type="text" class="search-bar" placeholder="Search">
+        <div class="user-icon">U</div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <ul>
+                <li>Home</li>
+                <li>Trending</li>
+                <li>Subscriptions</li>
+            </ul>
         </div>
-
-        <button class="collapsible">Menu 2</button>
-        <div class="menu-content">
-            <a href="#section3">Section 3</a>
-            <a href="#section4">Section 4</a>
+        <div class="content">
+            <div class="video">
+                <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail">
+                <div class="video-info">
+                    <h3>Video Title</h3>
+                    <p>Channel Name</p>
+                </div>
+            </div>
+            <!-- Add more video blocks as needed -->
         </div>
-    </div>
-
-    <div class="main-content">
-        <h1 id="section1">Section 1</h1>
-        <p>This is the content for section 1.</p>
-
-        <h1 id="section2">Section 2</h1>
-        <p>This is the content for section 2.</p>
-
-        <h1 id="section3">Section 3</h1>
-        <p>This is the content for section 3.</p>
-
-        <h1 id="section4">Section 4</h1>
-        <p>This is the content for section 4.</p>
-    </div>
-
-    <script>
-        document.querySelectorAll('.collapsible').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
+    </main>
+    <footer>
+        <p>© 2024 MyTube. All rights reserved.</p>
+    </footer>
 </body>
 </html>
