@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>K-SIX - Poisson's Equation and Potential Energy Minimization</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- MathJax for rendering math formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+                <!-- Logo -->
+                <div id="logo">
+                    <h1><a href="index.html" class="logo-text">K-SIX</a></h1>
+                </div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Welcome</a></li>
+                        <li><a href="fem.html">FEM</a></li>
+                        <li class="current"><a href="poisson-equation.html">Poisson's Equation</a></li>
+                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                        <li><a href="no-sidebar.html">No Sidebar</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <!-- Main Content -->
+        <div id="main-wrapper">
+            <div class="container">
+                <div class="row gtr-200">
+                    <div class="col-12">
+
+                        <!-- Content: Why Poisson's Equation is Used for Minimization -->
+                        <div id="content">
+                            <section class="last">
+                                <h2>Why Poisson's Equation is Used for Minimizing Potential Energy in FEM</h2>
+                                <p>
+                                    The <strong>Poisson's equation</strong> is central to many problems in physics and engineering, particularly in electrostatics, heat conduction, and structural mechanics. In the context of Finite Element Method (FEM), Poisson's equation is often used because it directly relates to the minimization of potential energy in systems where external forces or sources are present.
+                                </p>
+
+                                <h3>Poisson's Equation</h3>
+                                <p>
+                                    Poisson's equation is a partial differential equation (PDE) that takes the form:
+                                </p>
+                                <p>
+                                    \[
+                                    \nabla^2 \varphi = f
+                                    \]
+                                </p>
+                                <p>
+                                    Where:
+                                    <ul>
+                                        <li>\( \nabla^2 \) is the Laplace operator (or second spatial derivative).</li>
+                                        <li>\( \varphi \) is the potential function (e.g., electric potential or displacement field).</li>
+                                        <li>\( f \) represents external sources (e.g., charge density, heat source, or force).</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    The key feature of Poisson's equation is its ability to model systems with sources or loads, making it ideal for engineering applications where forces and displacements must be computed under the influence of external inputs.
+                                </p>
+
+                                <h3>Why Not Other Equations?</h3>
+
+                                <h4>Euler-Lagrange Equation</h4>
+                                <p>
+                                    The <strong>Euler-Lagrange equation</strong> is a more general formulation arising from the minimization of a functional. It is used to describe the motion of systems in mechanics by minimizing the action, which is a different concept than the minimization of potential energy.
+                                </p>
+                                <p>
+                                    In FEM, we focus on the equilibrium of forces and displacements in systems governed by linear or nonlinear equations, which is why Poisson's equation is a better fit than the Euler-Lagrange equation.
+                                </p>
+
+                                <h4>Laplace's Equation</h4>
+                                <p>
+                                    <strong>Laplace's equation</strong> is a special case of Poisson's equation that occurs when there are no sources or external forces:
+                                </p>
+                                <p>
+                                    \[
+                                    \nabla^2 \varphi = 0
+                                    \]
+                                </p>
+                                <p>
+                                    While Laplace's equation is also tied to minimization problems, such as free-space potential energy minimization, it is more limited because it applies only in the absence of external sources. In real-world problems modeled by FEM, external forces or inputs are typically present, making Poisson’s equation more appropriate.
+                                </p>
+
+                                <h4>Navier's Equations</h4>
+                                <p>
+                                    In elasticity, <strong>Navier's equations</strong> describe the equilibrium of a solid body under external forces. These equations can be derived from the principle of minimum potential energy for elastic bodies, and they are closely related to FEM problems in solid mechanics.
+                                </p>
+                                <p>
+                                    However, the Navier equations are specific to elasticity and structural mechanics, while Poisson’s equation is more broadly applicable in various fields, including electromagnetics, fluid flow, and thermal analysis, which is why Poisson's equation is more commonly used in general FEM formulations.
+                                </p>
+
+                                <h4>Heat Equation</h4>
+                                <p>
+                                    The <strong>heat equation</strong> is used to model the distribution of temperature over time and can be linked to energy minimization in the context of thermal energy:
+                                </p>
+                                <p>
+                                    \[
+                                    \frac{\partial T}{\partial t} - \alpha \nabla^2 T = 0
+                                    \]
+                                </p>
+                                <p>
+                                    Where \( T \) is the temperature, and \( \alpha \) is the thermal diffusivity. The heat equation focuses on transient behavior (time-dependent), while Poisson’s equation is typically used in steady-state problems. Since FEM often deals with static or equilibrium conditions, Poisson’s equation fits better in many structural, thermal, and electrical analyses.
+                                </p>
+
+                                <h3>Conclusion</h3>
+                                <p>
+                                    Poisson’s equation is widely used in FEM because it balances simplicity and broad applicability. It efficiently models systems where external sources and forces are present and allows for the minimization of potential energy in steady-state scenarios. While other equations like Euler-Lagrange, Laplace's, Navier's, and the Heat equation are used in specific cases, Poisson’s equation remains the go-to approach for many FEM problems.
+                                </p>
+
+                                <a href="fem-introduction.html" class="button icon solid fa-arrow-left">Back to FEM Introduction</a>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-wrapper">
+            <footer id="footer" class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="menu">
+                                <li>&copy; K-SIX. All rights reserved</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
