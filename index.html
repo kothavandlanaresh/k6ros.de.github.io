@@ -10,7 +10,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #24292f;
+            color: #202020;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -18,7 +18,7 @@
 
         /* Header styles */
         header {
-            background-color: #24292f; /* Dark color for header */
+            background-color: #333; /* Dark color for header */
             padding: 10px 20px;
             color: white;
             display: flex;
@@ -28,24 +28,24 @@
             top: 0;
             z-index: 1000;
             width: 100%;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.2); /* Optional: shadow for header */
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2); /* Optional shadow */
         }
         .header-left {
             display: flex;
             align-items: center;
         }
-        .toggle-sidebar {
-            background-color: #0366d6; /* Sidebar toggle button color */
+        .header-left .toggle-sidebar {
+            background-color: #444; /* Sidebar toggle button color */
             border: none;
             color: white;
             padding: 10px;
             cursor: pointer;
             border-radius: 3px;
-            margin-right: 15px;
             font-size: 1.5rem; /* Larger icon for visibility */
+            margin-right: 15px;
         }
-        .toggle-sidebar:hover {
-            background-color: #0056b3;
+        .header-left .toggle-sidebar:hover {
+            background-color: #555;
         }
         header h1 {
             margin: 0;
@@ -58,10 +58,34 @@
         header h1 a:hover {
             text-decoration: underline;
         }
+        .search-bar {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 2px;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        .header-actions .icon {
+            font-size: 1.5rem;
+            color: white;
+            margin-left: 15px;
+            cursor: pointer;
+        }
 
         /* Sidebar styles */
         nav {
-            background-color: #24292f; /* Dark color for sidebar */
+            background-color: #333; /* Dark color for sidebar */
             width: 250px;
             height: calc(100vh - 60px); /* Full height minus header height */
             position: fixed;
@@ -72,7 +96,6 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            transform: translateX(0);
         }
         nav a {
             color: white;
@@ -82,10 +105,8 @@
             border-bottom: 1px solid #444;
         }
         nav a:hover {
-            background-color: #0366d6; /* Hover color for links */
+            background-color: #555; /* Hover color for links */
         }
-
-        /* Hide the sidebar */
         .sidebar-hidden {
             transform: translateX(-250px);
         }
@@ -100,9 +121,6 @@
         }
         .content {
             padding: 20px;
-            background-color: white;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             width: 100%;
         }
 
@@ -133,8 +151,12 @@
             <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
             <h1><a href="index.html">K-SIX</a></h1>
         </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
         <div class="header-actions">
-            <!-- Add any additional header actions like a user icon here -->
+            <div class="icon">🔔</div>
+            <div class="icon">👤</div>
         </div>
     </header>
 
@@ -143,16 +165,14 @@
         <!-- Collapsible Sidebar -->
         <nav id="sidebar">
             <a href="index.html">Home</a>
-            <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
-            <a href="stiffness-matrix.html">Stiffness Matrix</a>
-            <a href="boundary-conditions.html">Boundary Conditions</a>
-            <a href="shape-functions.html">Shape Functions</a>
-            <a href="nonlinear-analysis.html">Nonlinear Analysis</a>
-            <a href="dynamic-analysis.html">Dynamic Analysis</a>
-            <a href="contact-form.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="references.html">References</a>
+            <a href="shorts.html">Shorts</a>
+            <a href="subscriptions.html">Subscriptions</a>
+            <a href="library.html">Library</a>
+            <a href="history.html">History</a>
+            <a href="your-videos.html">Your Videos</a>
+            <a href="watch-later.html">Watch Later</a>
+            <a href="liked-videos.html">Liked Videos</a>
+            <!-- Additional sidebar links can be added here -->
         </nav>
 
         <!-- Content Area -->
@@ -188,3 +208,4 @@
 
 </body>
 </html>
+
