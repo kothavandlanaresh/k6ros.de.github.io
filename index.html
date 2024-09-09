@@ -17,9 +17,9 @@
             min-height: 100vh;
         }
 
-        /* Header banner for K-SIX */
+        /* Header banner */
         header {
-            background-color: #24292f;
+            background-color: #24292f; /* Dark color for header */
             padding: 10px 20px;
             color: white;
             text-align: center;
@@ -27,10 +27,13 @@
             top: 0;
             z-index: 1000;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         header h1 a {
             color: white;
@@ -39,8 +42,19 @@
         header h1 a:hover {
             text-decoration: underline;
         }
+        .toggle-sidebar {
+            background-color: #0366d6; /* Sidebar toggle button color */
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .toggle-sidebar:hover {
+            background-color: #0056b3;
+        }
 
-        /* Layout for sidebar and content */
+        /* Main layout */
         .main {
             display: flex;
             flex: 1;
@@ -49,7 +63,7 @@
 
         /* Sidebar styles */
         nav {
-            background-color: #24292f;
+            background-color: #24292f; /* Dark color for sidebar */
             width: 250px;
             height: 100vh;
             position: fixed;
@@ -67,36 +81,15 @@
             border-bottom: 1px solid #444;
         }
         nav a:hover {
-            background-color: #0366d6;
+            background-color: #0366d6; /* Hover color for links */
         }
 
-        /* Sidebar hide/show toggle */
+        /* Hide the sidebar */
         .sidebar-hidden {
             transform: translateX(-250px);
         }
 
-        /* Sidebar toggle button */
-        .toggle-sidebar {
-            position: absolute;
-           
-        /* Sidebar toggle button */
-        .toggle-sidebar {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: #0366d6;
-            border: none;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 1001;
-            border-radius: 3px;
-        }
-        .toggle-sidebar:hover {
-            background-color: #0056b3;
-        }
-
-        /* Main content styles */
+        /* Content area styles */
         .content {
             flex: 1;
             margin-left: 250px;
