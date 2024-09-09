@@ -7,12 +7,51 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.5;
+            background-color: #f6f8fa;
+            margin: 0;
+            padding: 0;
+            color: #24292f;
         }
-        h1, h2 {
-            color: #333;
+        header {
+            background-color: #24292f;
+            padding: 10px 20px;
+            color: white;
+        }
+        header h1 a {
+            color: white;
+            text-decoration: none;
+        }
+        header h1 a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background-color: #24292f;
+        }
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        nav a:hover {
+            background-color: #0366d6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         pre {
             background-color: #f4f4f4;
@@ -34,7 +73,7 @@
 </head>
 <body>
     <header>
-        <h1>FEM Learning Hub</h1>
+        <h1><a href="index.html">KSIX</a></h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="eigenvalues.html">Eigenvalues and Eigenvectors</a>
@@ -50,78 +89,51 @@
         </nav>
     </header>
 
-    <h1>Understanding Eigenvalues and Eigenvectors</h1>
+    <div class="container">
+        <h1>Understanding Eigenvalues and Eigenvectors</h1>
 
-    <h2>Introduction</h2>
-    <p>Eigenvalues and eigenvectors are fundamental concepts in linear algebra used to analyze linear transformations. In FEM, they are crucial for understanding how systems respond to different types of loads and constraints.</p>
+        <h2>Introduction</h2>
+        <p>Eigenvalues and eigenvectors are fundamental concepts in linear algebra used to analyze linear transformations. In FEM, they are crucial for understanding how systems respond to different types of loads and constraints.</p>
 
-    <h2>Example Matrix</h2>
-    <pre>
+        <h2>Example Matrix</h2>
+        <pre>
         A = [ 2 1 0
               1 2 0
               0 0 1 ]
-    </pre>
+        </pre>
 
-    <h2>Finding Eigenvalues</h2>
-    <p>To find the eigenvalues of matrix <code>A</code>, we solve the characteristic equation:</p>
-    <pre>
+        <h2>Finding Eigenvalues</h2>
+        <p>To find the eigenvalues of matrix <code>A</code>, we solve the characteristic equation:</p>
+        <pre>
         det(A - λI) = 0
-    </pre>
-    <p>For matrix <code>A</code>, this is:</p>
-    <pre>
+        </pre>
+        <p>For matrix <code>A</code>, this is:</p>
+        <pre>
         det([ 2-λ 1   0
               1   2-λ 0
               0   0   1-λ ]) = (λ-1)(λ-3)^2
-    </pre>
-    <p>The eigenvalues are:</p>
-    <pre>
+        </pre>
+        <p>The eigenvalues are:</p>
+        <pre>
         λ = 1
         λ = 3 (with multiplicity 2)
-    </pre>
+        </pre>
 
-    <h2>Finding Eigenvectors</h2>
-    <p>For each eigenvalue, solve the equation <code>(A - λI)v = 0</code>:</p>
+        <h2>Finding Eigenvectors</h2>
+        <p>For each eigenvalue, solve the equation <code>(A - λI)v = 0</code>:</p>
 
-    <h3>For λ = 1:</h3>
-    <pre>
+        <h3>For λ = 1:</h3>
+        <pre>
         A - I = [ 1 1 0
                   1 1 0
                   0 0 0 ]
-    </pre>
-    <p>Solving this yields:</p>
-    <pre>
+        </pre>
+        <p>Solving this yields:</p>
+        <pre>
         v = [ 1
               -1
                0 ]
-    </pre>
+        </pre>
 
-    <h3>For λ = 3:</h3>
-    <pre>
-        A - 3I = [ -1 1 0
-                   1 -1 0
-                   0 0 -2 ]
-    </pre>
-    <p>Solving this yields:</p>
-    <pre>
-        v = [ 1
-              1
-              0 ]
-    </pre>
+        <h3>For λ = 
 
-    <h2>Summary</h2>
-    <p>Eigenvalues provide insight into the scaling factor of the transformation, while eigenvectors indicate the direction of this scaling.</p>
-
-    <div class="comments">
-        <h3>Comments</h3>
-        <form class="comment-form" action="submit_comment.php" method="post">
-            <label for="commenter-name">Name:</label>
-            <input type="text" id="commenter-name" name="commenter-name" required>
-
-            <label for="comment">Comment:</label>
-            <textarea id="comment" name="comment" rows="4" required></textarea>
-
-            <input type="submit" value="Post Comment">
-        </form>
-    </div>
-</body>
-</html>
